@@ -39,30 +39,37 @@ def click_next_page(n):
             next_button.click()
             time.sleep(3)
         except:
-            break
+            pass
 
 
 list_place_to_crawl= [
     # "jakarta-dki_g2000007",
     # "bandung-kota_g4000018",
-    "yogyakarta-kota_g4000072",
+    # "yogyakarta-kota_g4000072",
     # "medan-kota_g4000131",
     # "surabaya-kota_g4000216", 
-    # "bekasi-kota_g4000020",
-    # "depok-kota_g4000024", 
+    # "bekasi-kota_g4000020", 
     # "tangerang-kota_g4000079", 
     # "palembang-kota_g4000368",
     # "semarang-kota_g4000065",
     # "makassar-kota_g4000307",
     # "depok-kota_g4000024", 
     # "batam-kota_g4000406",
-    "temanggung-kab_g4000059"
+    # "temanggung-kab_g4000059",
+    "demak-kab_g4000040",
+    "boyolali-kab_g4000037",
+    "kudus-kab_g4000047",
+    # "magelang-kota_g4000062",
+    "klaten-kab_g4000046",
+    "purworejo-kab_g4000053",
+    "balikpapan-kota_g4000250",
+    "sragen-kab_g4000056"
 ]
 
 for city in list_place_to_crawl:
     
     # open url in browser and grab
-    url= get_url(city, "rumah tinggal")
+    url= get_url(city, "rumah")
     driver.get(url)
 
     # load next page
@@ -84,3 +91,5 @@ for city in list_place_to_crawl:
         writer.writerows(records)
 
 driver.close()
+
+print("Task finished.")
